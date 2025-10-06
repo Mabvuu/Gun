@@ -31,15 +31,12 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 // ----------------- TEMP: convert 403 -> 200 (DEV ONLY) -----------------
-// This middleware intercepts attempts to set status(403) and changes them to 200.
-// It also logs the original intention so you can find the real caller later.
 app.use((req, res, next) => {
   const originalStatus = res.status.bind(res);
   res.status = function (code) {
     if (code === 403) {
       console.warn('TEMP DEV OVERRIDE: intercepted res.status(403) and changing to 200 for', req.method, req.originalUrl);
       console.warn('Caller stack:', new Error().stack.split('\n').slice(2,8).join('\n'));
-      // set a header to indicate we overrode it
       res.setHeader('x-dev-403-overrode', 'true');
       return originalStatus(200);
     }
@@ -49,7 +46,22 @@ app.use((req, res, next) => {
 });
 // ---------------------------------------------------------------------
 
-app.use(cors());
+// ✅ Corrected CORS
+const allowedOrigins = [
+  'https://gun-pdl1bkzdx-pattys-projects-0a4c71bf.vercel.app',
+  'https://gun-black.vercel.app',
+  'http://localhost:5173' // keep for local dev
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser tools
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('CORS not allowed for ' + origin), false);
+  },
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -95,20 +107,19 @@ app.use('/api/profile', profiles);
 app.use('/api/dealer/applicants', dealerApplicants);
 app.use('/api/search', searchRouter);
 
-
 // KEEP only the MOJ application handler for /api/applications
 app.use('/api/applications', mojApplication);
 
 // MOJ-specific admin/ui routes
 app.use('/api/moj', mojRoutes);
 app.use('/api/moj', mojForward);
+
 // mount club endpoints
 app.use('/api/club', clubRouter);
 app.use('/api/police', policeRouter);
 app.use('/api/province', provinceRouter);
 app.use('/api/int', intRouter);
 app.use('/api/cfr', cfrRouter);
-
 
 // serve static frontend if present
 app.use(express.static(path.join(__dirname, 'public')));
