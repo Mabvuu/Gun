@@ -1,8 +1,6 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Import route groups
 import DealerRoutes from './Dealer/DealerRoutes';
 import ApplicantsRoutes from './applicants/applicantsRoutes';
 import Login from './pages/Login';
@@ -17,40 +15,32 @@ import CFRRoutes from './CFR';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Login page */}
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/admin/signup" element={<OperatorLogin />} />
+    <>
+      <style>{`
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body, #root { width: 100%; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
+        img, picture, canvas, iframe, svg { max-width: 100%; height: auto; display: block; }
+        .min-w-0 { min-width: 0; }
+        body { overflow-y: auto; overflow-x: hidden; }
+        .app-viewport { width: 100%; min-height: 100vh; overflow-x: hidden; overflow-y: auto; position: relative; }
+      `}</style>
 
-        {/* Applicants section */}
-        <Route path="/applicant/*" element={<ApplicantsRoutes />} />
-
-        {/* Dealer section (all dealer routes handled inside DealerRoutes) */}
-        <Route path="/dealer/*" element={<DealerRoutes />} />
-
-        {/* MOJ Dashboard (this is where the MOJ Routes are) */}
-        <Route path="/moj/*" element={<MOJRoutes />} />
-
-        {/* Sportclub Dashboard (this is where the Sportclub Routes are) */}
-        <Route path="/club/*" element={<SportsClubRoutes />} />
-
-        {/*Police Dashboard (this is where the Police Routes are) */}
-        <Route path="/police/*" element={<PoliceRoutes />} />
-
-        {/*Province Dashboard (this is where the Province Routes are) */}
-        <Route path="/province/*" element={<ProvinceRoutes />} />
-
-         {/*INTELLIGENCE Dashboard (this is where the INT Routes are) */}
-        <Route path="/int/*" element={<INTELRoutes />} />
-
-        <Route path="/cfr/*" element={<CFRRoutes />} />
-
-
-        {/* 404 fallback */}
-        <Route path="*" element={<div>Page not found</div>} />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/admin/signup" element={<OperatorLogin />} />
+          <Route path="/applicant/*" element={<ApplicantsRoutes />} />
+          <Route path="/dealer/*" element={<DealerRoutes />} />
+          <Route path="/moj/*" element={<MOJRoutes />} />
+          <Route path="/club/*" element={<SportsClubRoutes />} />
+          <Route path="/police/*" element={<PoliceRoutes />} />
+          <Route path="/province/*" element={<ProvinceRoutes />} />
+          <Route path="/int/*" element={<INTELRoutes />} />
+          <Route path="/cfr/*" element={<CFRRoutes />} />
+          <Route path="*" element={<div>Page not found</div>} />
+        </Routes>
+      </Router>
+    </>
   );
 }
