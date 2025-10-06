@@ -162,7 +162,7 @@ export default function ClubNav() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    navigate('/logout');
+    navigate('/');
   };
 
   return (

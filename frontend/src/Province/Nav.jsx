@@ -115,10 +115,10 @@ export default function Nav() {
         // ignore server errors
       }
 
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
     } catch (err) {
       console.error("Logout error", err);
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
     }
   };
 

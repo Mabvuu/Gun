@@ -156,11 +156,11 @@ export default function PoliceNav() {
         // not critical — keep going
       }
 
-      navigate('/login', { replace: true });
+      navigate('/', { replace: true });
     } catch (err) {
       console.error('Logout failed', err);
       // still navigate away to login
-      navigate('/login', { replace: true });
+      navigate('/', { replace: true });
     }
   };
 

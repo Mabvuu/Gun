@@ -1,6 +1,6 @@
 // src/applicants/components/Nav.jsx
 import React, { Suspense } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, OrbitControls } from '@react-three/drei';
 import logoGLB from '../assets/1.glb';
@@ -53,11 +53,22 @@ function RotatingModel({ src = logoGLB, speed = 0.4 }) {
 }
 
 export default function Nav({ className = '' }) {
+  const navigate = useNavigate();
+
   const linkClass = ({ isActive }) =>
     [
       'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition',
       isActive ? 'text-white' : 'text-white/90 hover:opacity-95',
     ].join(' ');
+
+  const handleLogout = () => {
+    // Clear stored auth tokens
+    const keys = ["access_token", "supabase.auth.token", "sb:token", "token"];
+    keys.forEach(k => localStorage.removeItem(k));
+
+    // Redirect to login page
+    navigate("/", { replace: true });
+  };
 
   return (
     <aside
@@ -66,6 +77,7 @@ export default function Nav({ className = '' }) {
       style={{ background: `linear-gradient(180deg, ${COLORS.primaryLight} 0%, ${COLORS.primary} 100%)` }}
     >
       <div>
+        {/* Logo */}
         <div className="w-full h-36 mb-4 rounded-md overflow-hidden bg-white/5 flex items-center justify-center">
           <Canvas camera={{ position: [0, 0, 2.5], fov: 45 }}>
             <ambientLight intensity={0.8} />
@@ -79,18 +91,18 @@ export default function Nav({ className = '' }) {
           </Canvas>
         </div>
 
+        {/* User Info */}
         <div className="mb-3 text-white">
           <div className="text-lg font-semibold">Applicant</div>
           <div className="text-xs opacity-80">Account</div>
         </div>
 
+        {/* Navigation Links */}
         <nav className="space-y-2">
           <NavLink
             to="/applicant/dashboard"
             className={({ isActive }) => linkClass({ isActive })}
-            style={({ isActive }) => ({
-              background: isActive ? COLORS.deepGreen : 'transparent',
-            })}
+            style={({ isActive }) => ({ background: isActive ? COLORS.deepGreen : 'transparent' })}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v8h8V3h-8zM3 21h8v-8H3v8z" />
@@ -101,9 +113,7 @@ export default function Nav({ className = '' }) {
           <NavLink
             to="/applicant/profile"
             className={({ isActive }) => linkClass({ isActive })}
-            style={({ isActive }) => ({
-              background: isActive ? COLORS.deepGreen : 'transparent',
-            })}
+            style={({ isActive }) => ({ background: isActive ? COLORS.deepGreen : 'transparent' })}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5z" />
@@ -115,9 +125,7 @@ export default function Nav({ className = '' }) {
           <NavLink
             to="/applicant/wallet"
             className={({ isActive }) => linkClass({ isActive })}
-            style={({ isActive }) => ({
-              background: isActive ? COLORS.deepGreen : 'transparent',
-            })}
+            style={({ isActive }) => ({ background: isActive ? COLORS.deepGreen : 'transparent' })}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M2 7h20v10H2z" />
@@ -127,6 +135,7 @@ export default function Nav({ className = '' }) {
           </NavLink>
         </nav>
 
+        {/* Quick Links */}
         <div className="mt-6 pt-4 border-t border-white/10 text-xs text-white/85">
           <div className="mb-2">Quick links</div>
           <ul className="space-y-1">
@@ -144,6 +153,7 @@ export default function Nav({ className = '' }) {
         </div>
       </div>
 
+      {/* Logout Button */}
       <div className="mt-6">
         <button
           type="button"
@@ -152,10 +162,7 @@ export default function Nav({ className = '' }) {
             background: `linear-gradient(90deg, ${COLORS.magenta}, ${COLORS.pink})`,
             color: '#fff',
           }}
-          onClick={() => {
-            const ev = new CustomEvent('logout-request');
-            window.dispatchEvent(ev);
-          }}
+          onClick={handleLogout} // <-- redirects to "/"
         >
           Logout
         </button>

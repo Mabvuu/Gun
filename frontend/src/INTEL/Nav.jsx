@@ -1,8 +1,8 @@
-// src/INTEL/Nav.jsx
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import modelUrl from "../assets/1.glb";
 
+// RotatingLogo component stays the same
 function RotatingLogo({ src = modelUrl, size = 120 }) {
   const canvasRef = useRef(null);
   const [error, setError] = useState(null);
@@ -138,6 +138,17 @@ const linkInactive = "text-[#CDEDD7] hover:bg-[#0B3221] hover:text-white";
 const linkActive = "font-semibold bg-[#135E3D] text-white shadow-sm";
 
 export default function Nav() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Remove common auth tokens
+    const keys = ["access_token", "supabase.auth.token", "sb:token", "token"];
+    keys.forEach((k) => localStorage.removeItem(k));
+
+    // Navigate to login page
+    navigate("/", { replace: true });
+  };
+
   return (
     <nav className="w-56 min-w-[14rem] h-screen flex flex-col p-4" style={{ backgroundColor: "#09110D", color: "#E6F7EE" }}>
       <div className="flex flex-col items-center mb-4">
@@ -154,9 +165,7 @@ export default function Nav() {
 
       <div className="mt-auto">
         <button
-          onClick={() => {
-            console.log("logout clicked");
-          }}
+          onClick={handleLogout}
           className="w-full text-left flex items-center justify-center px-3 py-2 rounded-md transition-all"
           style={{ backgroundColor: "#135E3D", color: "#fff", border: "1px solid rgba(255,255,255,0.06)" }}
         >

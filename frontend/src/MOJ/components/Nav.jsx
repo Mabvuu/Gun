@@ -243,7 +243,7 @@ export default function MOJNav() {
     } catch {
       // ignore
     }
-    navigate('/login');
+    navigate('/');
   }
 
   return (
