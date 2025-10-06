@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Verify</h2>
+    <input id="nid" placeholder="Enter National ID" />
+    <button onclick="verify()">Check</button>
+    <pre id="out"></pre>
+    <script>
+      async function verify() {
+        const value = document.getElementById("nid").value;
+        const res = await fetch("/v1/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ input_type: "national_id", value }),
+        });
+        document.getElementById("out").textContent = await res.text();
+      }
+    </script>
+  </body>
+</html>

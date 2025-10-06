@@ -1,0 +1,17 @@
+column_name
+id
+token_id
+serial_hash
+serial_enc
+make
+model
+caliber
+metadata_uri
+import_doc_hash
+holder_type
+holder_id
+status
+created_at
+created_by
+description
+tx_hash

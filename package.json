@@ -1,0 +1,27 @@
+{
+  "name": "guns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "truffle:compile": "truffle compile",
+    "truffle:migrate": "truffle migrate --network deploy --reset",
+    "truffle:migrate:dev": "truffle migrate --network development --reset"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "@supabase/supabase-js": "^2.57.4",
+    "dotenv": "^17.2.2",
+    "ethers": "^6.15.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "truffle": "^5.11.5"
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "nextId": 4,
+  "applications": [
+    {
+      "id": 1,
+      "dealerName": "k'fmej",
+      "token": "eproin",
+      "province": "pweom",
+      "town": "lw",
+      "applicantId": "wdpmi",
+      "note": "",
+      "file": null,
+      "status": "POLICE",
+      "flagged": false,
+      "history": [
+        {
+          "by": "k'fmej",
+          "role": "DEALER",
+          "action": "SUBMIT",
+          "at": "2025-10-01T06:42:34.334Z"
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:14:12.830Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:14:15.647Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:14:27.275Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:17:48.876Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:17:50.160Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:17:58.358Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T01:17:58.570Z",
+          "details": {
+            "club": "club-1",
+            "province": "pweom",
+            "town": "lw"
+          }
+        },
+        {
+          "by": "club-1",
+          "role": "CLUB",
+          "action": "ENDORSE",
+          "at": "2025-10-02T14:40:15.132Z",
+          "details": {
+            "hoursPracticed": 30,
+            "isMember": true
+          }
+        }
+      ],
+      "forward": {
+        "by": "MOJ_USER",
+        "note": "",
+        "club": "club-1",
+        "province": "pweom",
+        "town": "lw",
+        "at": "2025-10-02T01:17:58.570Z"
+      },
+      "club": "club-1",
+      "endorsement": {
+        "endorsedBy": "club-1",
+        "hoursPracticed": 30,
+        "isMember": true,
+        "note": "iwnie",
+        "file": {
+          "path": "/uploads/1759416015119-e8ocwn-Patty_Mabvuu.pdf",
+          "originalName": "Patty Mabvuu.pdf"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "dealerName": "Patty",
+      "token": "0937",
+      "province": "Harare",
+      "town": "Harare",
+      "applicantId": "Klas",
+      "note": "",
+      "file": {
+        "path": "/uploads/1759447437783-gl8y8x-Patty_Mabvuu.pdf",
+        "originalName": "Patty Mabvuu.pdf"
+      },
+      "status": "POLICE",
+      "flagged": false,
+      "history": [
+        {
+          "by": "Patty",
+          "role": "DEALER",
+          "action": "SUBMIT",
+          "at": "2025-10-02T23:23:57.806Z"
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:24:30.898Z",
+          "details": {
+            "club": "club-3",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:24:42.436Z",
+          "details": {
+            "club": "club-3",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:25:07.000Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:25:19.266Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:25:19.947Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:33:39.474Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:33:40.002Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:34:00.749Z",
+          "details": {
+            "club": "club-3",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:34:00.953Z",
+          "details": {
+            "club": "club-3",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:34:04.965Z",
+          "details": {
+            "club": "club-2",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "club-2",
+          "role": "CLUB",
+          "action": "ENDORSE",
+          "at": "2025-10-02T23:34:47.258Z",
+          "details": {
+            "hoursPracticed": 80,
+            "isMember": true
+          }
+        },
+        {
+          "by": "club-2",
+          "role": "CLUB",
+          "action": "ENDORSE",
+          "at": "2025-10-02T23:51:18.889Z",
+          "details": {
+            "hoursPracticed": 80,
+            "isMember": true
+          }
+        }
+      ],
+      "forward": {
+        "by": "MOJ_USER",
+        "note": "Klas",
+        "club": "club-2",
+        "province": "Harare",
+        "town": "Harare",
+        "at": "2025-10-02T23:34:04.965Z"
+      },
+      "club": "club-2",
+      "endorsement": {
+        "endorsedBy": "club-2",
+        "hoursPracticed": 80,
+        "isMember": true,
+        "note": "its pink very noisy",
+        "file": {
+          "path": "/uploads/1759449078876-daze9b-Patty_Mabvuu.pdf",
+          "originalName": "Patty Mabvuu.pdf"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "dealerName": "Patty",
+      "token": "934-0=53",
+      "province": "Harare",
+      "town": "Harare",
+      "applicantId": "904=2",
+      "note": "Its Pink",
+      "file": null,
+      "status": "POLICE",
+      "flagged": false,
+      "history": [
+        {
+          "by": "Patty",
+          "role": "DEALER",
+          "action": "SUBMIT",
+          "at": "2025-10-02T23:52:08.151Z"
+        },
+        {
+          "by": "MOJ_USER",
+          "role": "MOJ",
+          "action": "FORWARD",
+          "at": "2025-10-02T23:52:21.201Z",
+          "details": {
+            "club": "club-1",
+            "province": "Harare",
+            "town": "Harare"
+          }
+        },
+        {
+          "by": "club-1",
+          "role": "CLUB",
+          "action": "ENDORSE",
+          "at": "2025-10-02T23:52:50.038Z",
+          "details": {
+            "hoursPracticed": 80,
+            "isMember": true
+          }
+        }
+      ],
+      "forward": {
+        "by": "MOJ_USER",
+        "note": "",
+        "club": "club-1",
+        "province": "Harare",
+        "town": "Harare",
+        "at": "2025-10-02T23:52:21.201Z"
+      },
+      "club": "club-1",
+      "endorsement": {
+        "endorsedBy": "club-1",
+        "hoursPracticed": 80,
+        "isMember": true,
+        "note": "aeuwebf",
+        "file": {
+          "path": "/uploads/1759449170033-9s7v1i-Patty_Mabvuu.pdf",
+          "originalName": "Patty Mabvuu.pdf"
+        }
+      }
+    }
+  ]
+}
