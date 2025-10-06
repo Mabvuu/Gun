@@ -48,9 +48,8 @@ app.use((req, res, next) => {
 
 // ✅ Corrected CORS
 const allowedOrigins = [
-  'https://gun-pdl1bkzdx-pattys-projects-0a4c71bf.vercel.app',
-  'https://gun-black.vercel.app',
-  'http://localhost:5173' // keep for local dev
+  'https://gunprojectzim.netlify.app', // your frontend
+  'http://localhost:5173'             // local dev
 ];
 
 app.use(cors({
