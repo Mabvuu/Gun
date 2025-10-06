@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 
 // ✅ Corrected CORS
 const allowedOrigins = [
-  'https://gunproject-zeta.vercel.app', // your frontend deployed on Vercel
+  'https://gunprojectzim.vercel.app', // your frontend deployed on Vercel
   'http://localhost:5173'               // local dev
 ];
 
