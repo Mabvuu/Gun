@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 
 // ✅ Corrected CORS
 const allowedOrigins = [
-  'https://gunprojectzim.netlify.app', // your frontend
+  'https://gunproject.vercel.app', // your frontend
   'http://localhost:5173'             // local dev
 ];
 
